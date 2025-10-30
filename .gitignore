@@ -1,0 +1,5 @@
+/.idea
+/logs
+/data/processed
+/models
+/src/__pycache__/*.pyc
