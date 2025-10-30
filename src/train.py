@@ -7,6 +7,8 @@
 @date: 2025/10/27 11:25
 @desc: 
 """
+import time
+
 import torch
 from tqdm import tqdm
 
@@ -88,7 +90,7 @@ def tarin():
     optimizer = torch.optim.Adam(model.parameters(), lr=config.LEARNING_RATE)
 
     #tensorboard
-    writer = SummaryWriter(log_dir=config.LOGS_DIR)
+    writer = SummaryWriter(log_dir=config.LOGS_DIR / time.strftime('%Y-%m-%d_%H-%M-%S'))
 
     best_loss = float('inf')
     for epoch in range(config.EPOCHS):
